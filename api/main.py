@@ -5,12 +5,13 @@ import numpy as np
 from io import BytesIO
 from PIL import Image
 import tensorflow as tf
+from model import class_names
 
 VERSION = 1
 
 # Load the model
 MODEL = tf.keras.models.load_model(f"model/{VERSION}.keras")
-CLASS_NAMES = ['HandGun', 'Knife', 'Rifle', 'ShotGun', 'SMG']  # Update this list with your actual class names
+CLASS_NAMES = class_names
 
 app = FastAPI()
 
